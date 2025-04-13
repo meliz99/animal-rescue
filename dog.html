@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bootstrap/bootstrap.min.css ">
+    <title>Rescate Animal</title>
+    <script src="./bootstrap/bootstrap.min.js"></script>
+    <style>
+        .bg-nav {
+            background-color: #1ea0d8
+        }
+
+        .bg-img {
+            background-image: url('./imagenes/imagenes_relleno/fondo_header.jpg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+        }
+
+        .sombra-negra {
+            color: #01a0e2; /* Color del texto */
+            text-shadow: 10px 3px 4px black; /* Sombra negra */
+            font-size: 120px; /* Tamaño del texto */
+            font-family: 'Luckiest Guy', cursive;
+            font-weight: bold;
+        }
+
+        .fondo-morado {
+            background-color: #6664fe;
+            width: 100%;
+            height: 250px;
+            clip-path: ellipse(80% 100% at 50% 100%);
+        }
+
+        .canvaTwo {
+            position: absolute;
+            top: 9.10%;
+            z-index: -1
+        }
+
+        .rescueCenter {
+            font-size: 70px;
+            margin: 2rem;
+            font-family: 'Bangers', cursive;
+            font-weight: bold;
+        }
+
+        .habana {
+            font-size: 35px;
+            font-weight: bold;
+            margin: 5rem;
+        }
+
+        .imgCapitolio {
+            margin: 2rem;
+            position: relative;
+            overflow: hidden;
+            border-top-left-radius: 0 !important;
+            border-bottom-right-radius: 0 !important;
+        }
+
+        .centro {
+            font-weight: bold;
+            color: #0d6efd;
+            text-align: center
+        }
+
+        header {
+            height: 32.70rem;
+
+        }
+
+        a {
+            color: rgb(48 51 56);
+            text-decoration: underline;
+            font-size: 30px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        hr {
+            height: 5px;
+            opacity: 1;
+        }
+
+        .imgAnimals {
+            margin: 2rem;
+            position: relative;
+            overflow: hidden;
+            border-top-left-radius: 0 !important;
+            border-bottom-right-radius: 0 !important;
+        }
+        .imgVeterinary{
+            margin: 2rem;
+            position: relative;
+            overflow: hidden;
+            border-top-left-radius: 0 !important;
+            border-bottom-right-radius: 0 !important;
+        }
+
+        .mt-75rem {
+            margin-top: 7.5rem
+        }
+    </style>
+    <script>
+
+        function startOne() {
+            var element = document.getElementById("canvaOne");
+            element.width = window.innerWidth - 16;
+            element.height = window.innerHeight * 1.6;
+
+            var context = element.getContext("2d");
+
+            var ancho = window.innerWidth;
+            var alto = window.innerHeight * 1.6;
+
+            context.fillStyle = '#6666FF';
+
+            context.beginPath();
+
+            context.moveTo(0, alto * 0.18);
+            context.bezierCurveTo(ancho * 0.5, alto * 0.1, ancho * 0.6, -alto * 0.2, ancho, alto * 0.29);
+            context.lineTo(ancho, alto * 0.9);
+            context.bezierCurveTo(ancho * 0.7, alto * 0.9, ancho * 0.3, alto * 1.1, 0, alto * 0.9);
+            context.closePath();
+            context.fill();
+        }
+
+        function startTwo() {
+            var element = document.getElementById("canvaTwo");
+            element.width = window.innerWidth - 20;
+            element.height = window.innerHeight;
+
+            var context = element.getContext("2d");
+
+            var ancho = window.innerWidth;
+            var alto = window.innerHeight;
+
+            context.fillStyle = '#5b7ab0';
+
+            context.beginPath();
+
+            context.moveTo(0, alto * 0.2);
+            context.lineTo(ancho, alto * 0.2);
+
+            context.moveTo(0, alto * 0.2);
+            context.bezierCurveTo(ancho * 0.1, alto * 0.8, ancho * 0.75, alto * 0.5, ancho, alto * 0.2);
+            context.closePath();
+            context.fill();
+        }
+
+        function load() {
+            startOne();
+            startTwo();
+        }
+
+        window.onload = load;
+        window.onresize = load;
+
+    </script>
+</head>
+<body style="position: relative;">
+
+    <div class="canvaTwo">
+        <canvas id="canvaTwo" width="700" height="500"></canvas>
+    </div>
+
+    <header class="bg-img">
+        <nav class="d-flex justify-content-end ">
+
+            <div class="d-flex justify-content-around w-50 p-2 rounded-pill rounded-end-0 bg-nav">
+                <div>
+                    <a class="text-white" href="#">Nosotros</a>
+                </div>
+                <div>
+                    <a class="text-white" href="#">Donación</a>
+                </div>
+                <div>
+                    <a class="text-white" href="#">Contactos</a>
+                </div>
+            </div>
+
+        </nav>
+        <div class="w-100 d-flex align-items-center justify-content-center" style="height: 80%">
+            <h1 class="text-center sombra-negra">Rescate Animal</h1>
+        </div>
+    </header>
+
+    <div class="d-flex justify-content-start mt-75rem" >
+        <div>
+            <h1 class="rescueCenter">Centros de Rescate</h1>
+        </div>
+        <div class="d-flex justify-content-center habana ">
+            <a href="#">La Habana ></a>
+        </div>
+    </div>
+    <div class="d-flex justify-content-between" style="margin-top: -1%">
+        <div class="rounded-5 imgCapitolio">
+            <div style="width: 25rem; height: 15rem;">
+                <img class=" w-100 h-100" src="./imagenes/imagenes_relleno/213208-El-Capitolio.jpg">
+            </div>
+            <div class="position-absolute bottom-0 start-50 translate-middle-x "
+                 style="background-color: rgba(200,200,200,0.8);width: 25rem">
+                <h1 class="centro">Centro 1</h1>
+            </div>
+        </div>
+        <div class="rounded-5 imgCapitolio">
+            <div style="width: 25rem; height: 15rem;">
+                <img class=" w-100 h-100" src="./imagenes/imagenes_relleno/213208-El-Capitolio.jpg">
+            </div>
+            <div class="position-absolute bottom-0 start-50 translate-middle-x "
+                 style="background-color: rgba(200,200,200,0.8);width: 25rem">
+                <h1 class="centro">Centro 2</h1>
+            </div>
+        </div>
+        <div class="rounded-5 imgCapitolio">
+            <div style="width: 25rem; height: 15rem;">
+                <img class=" w-100 h-100" src="./imagenes/imagenes_relleno/213208-El-Capitolio.jpg">
+            </div>
+            <div class="position-absolute bottom-0 start-50 translate-middle-x "
+                 style="background-color: rgba(200,200,200,0.8);width: 25rem">
+                <h1 class="centro">Centro 3</h1>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center">
+        <hr class="w-50 bg-black hr">
+    </div>
+
+    <div class="d-flex justify-content-center">
+        <div class="rounded-pill"
+             style="width: 0.3rem;height: 2rem; background-color: black;transform: rotateZ(120deg) "></div>
+        <div class="rounded-pill"
+             style="width: 0.3rem;height: 2rem; background-color: black;transform: rotateZ(60deg) translate(10px, -18px);"></div>
+    </div>
+    <div style="display: flex ;align-items: baseline;margin: 4rem;">
+        <div><img style="width: 30rem" src="./imagenes/imagenes_relleno/caricia_perro_img.jpg"></div>
+        <div>
+            <span style="font-size: 35px;font-weight: bold;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi quo recusandae hic, aspernatur molestias.
+            </span>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-center">
+        <h1 style="font-size: 100px;font-weight: bold;color: #2b9693">Ayúdalos</h1>
+    </div>
+
+    <div class="d-flex justify-content-start " style="margin-top: 8rem">
+        <div>
+            <h1 style="font-size: 70px ;margin:2rem ; font-family: 'Bangers', cursive;font-weight: bold;">
+                Veterinarias</h1>
+        </div>
+        <div class=" d-flex justify-content-center habana ">
+            <a href="#">La Habana ></a>
+        </div>
+    </div>
+    <div class="d-flex justify-content-between" style="margin-top: -3%">
+        <div class="rounded-5 imgVeterinary">
+            <div style="width: 25rem; height: 15rem;">
+                <img class=" w-100 h-100"
+                     src="./imagenes/imagenes_relleno/305830385_458474049629727_5913632962146183090_n.jpg">
+            </div>
+            <div class="position-absolute bottom-0 start-50 translate-middle-x "
+                 style="background-color: rgba(200,200,200,0.8);width: 25rem;">
+                <h1 style="font-weight: bold;color: white;text-align: center; ">Laika</h1>
+            </div>
+        </div>
+        <div class="rounded-5 imgVeterinary">
+            <div style="width: 25rem; height: 15rem;">
+                <img class=" w-100 h-100"
+                     src="./imagenes/imagenes_relleno/mascolive-mipyme-clinica-veterinaria.png">
+            </div>
+            <div class="position-absolute bottom-0 start-50 translate-middle-x "
+                 style="background-color: rgba(200,200,200,0.8);width: 25rem">
+                <h1 style="font-weight: bold;color: white;text-align: center">Mascolive</h1>
+            </div>
+        </div>
+        <div class="rounded-5 imgVeterinary">
+            <div style="width: 25rem; height: 15rem;">
+                <img class=" w-100 h-100" src="./imagenes/imagenes_relleno/descarga (1).jfif">
+            </div>
+            <div class="position-absolute bottom-0 start-50 translate-middle-x "
+                 style="background-color: rgba(200,200,200,0.8);width: 25rem">
+                <h1 style="font-weight: bold;color: white;text-align: center">Vet-USAM</h1>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center">
+        <hr class="w-50 bg-black" style="height: 5px; opacity: 1;">
+    </div>
+
+    <div class="d-flex justify-content-center">
+        <div class="rounded-pill"
+             style="width: 0.3rem;height: 2rem; background-color: black;transform: rotateZ(120deg) "></div>
+        <div class="rounded-pill"
+             style="width: 0.3rem;height: 2rem; background-color: black;transform: rotateZ(60deg) translate(10px, -18px);"></div>
+    </div>
+
+    <div class="d-flex justify-content-start" style="margin-top: 8rem">
+        <div>
+            <h1 style="font-size: 70px ;margin:2rem ; font-family: 'Bangers', cursive;font-weight: bold;">En
+                Adopción</h1>
+        </div>
+        <div class=" d-flex justify-content-center" style="font-size: 35px;font-weight: bold;margin: 5rem">
+            <a href="#">La Habana ></a>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-center flex-wrap ">
+        <div class="rounded-5 imgAnimals">
+            <div style="width: 15rem; height: 10rem;">
+                <img class=" w-100 h-100" src="./imagenes/imagenes_relleno/images (2).jfif">
+            </div>
+        </div>
+        <div class="rounded-5 imgAnimals">
+            <div style="width: 15rem; height: 10rem;">
+                <img class=" w-100 h-100" src="./imagenes/imagenes_relleno/images (1).jfif">
+            </div>
+        </div>
+        <div class="rounded-5 imgAnimals">
+            <div style="width: 15rem; height: 10rem;">
+                <img class=" w-100 h-100" src="./imagenes/imagenes_relleno/images.jfif">
+            </div>
+        </div>
+        <div class="rounded-5 imgAnimals">
+            <div style="width: 15rem; height: 10rem;">
+                <img class=" w-100 h-100" src="./imagenes/imagenes_relleno/descarga (3).jfif">
+            </div>
+        </div>
+        <div class="rounded-5 imgAnimals">
+            <div style="width: 15rem; height: 10rem;">
+                <img class=" w-100 h-100" src="./imagenes/imagenes_relleno/descarga (2).jfif">
+            </div>
+        </div>
+        <div class="rounded-5 imgAnimals">
+            <div style="width: 15rem; height: 10rem;">
+                <img class=" w-100 h-100" src="./imagenes/imagenes_relleno/descarga (4).jfif">
+            </div>
+        </div>
+        <div class="rounded-5 imgAnimals">
+            <div style="width: 15rem; height: 10rem;">
+                <img class=" w-100 h-100" src="./imagenes/imagenes_relleno/descarga (5).jfif">
+            </div>
+        </div>
+        <div class="rounded-5 imgAnimals">
+            <div style="width: 15rem; height: 10rem;">
+                <img class=" w-100 h-100" src="./imagenes/imagenes_relleno/images (3).jfif">
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center">
+        <hr class="w-50 bg-black hr">
+    </div>
+
+    <div class="d-flex justify-content-center">
+        <div class="rounded-pill"
+             style="width: 0.3rem;height: 2rem; background-color: black;transform: rotateZ(120deg) "></div>
+        <div class="rounded-pill"
+             style="width: 0.3rem;height: 2rem; background-color: black;transform: rotateZ(60deg) translate(10px, -18px);"></div>
+    </div>
+    <footer>
+        <div style=" display:flex;justify-content: center;margin-top: 8rem">
+            <img style="width: 40rem" src="./imagenes/imagenes_relleno/dog-cat.png">
+        </div>
+        <div style="background-color: #001e5a;padding-left: 5rem;padding-right: 5rem;margin-top: -7rem;padding-top: 5rem">
+            <div style="display: flex; justify-content: space-between;gap: 5rem;flex-wrap: wrap">
+                <div>
+                    <p style="font-size: 50px;color: white;font-weight: bold;">Contactos</p>
+                </div>
+                <div>
+                    <p style="font-size: 50px;color: white;font-weight: bold;">Direcciones</p>
+                </div>
+            </div>
+            <div style="display: flex; justify-content: space-between;gap: 5rem;flex-wrap: wrap">
+                <div>
+                    <p style="font-size: 50px;color: white;font-weight: bold;">Ayuda</p>
+                </div>
+                <div>
+                    <p style="font-size: 50px;color: white;font-weight: bold;">Nosotros</p>
+                </div>
+            </div>
+            <div style="display: flex; align-items: center;flex-direction: column">
+                <div>
+                    <p style="font-size: 80px;color: white;font-family: 'Bangers', cursive;font-weight: bold;">Donar</p>
+                </div>
+                <div>
+                    <p style="font-size: 35px;color: white;">Info</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div style="position: absolute;top: 45%;z-index: -1;">
+        <canvas id="canvaOne" width="700" height="500"></canvas>
+    </div>
+
+</body>
+</html>
